@@ -1,0 +1,35 @@
+<div class="mainBoxContent">
+    <div class="mainBoxHeader">
+      <span class="header">Portfolio</span>
+      <span class="headerdescription"
+        >Explore a seleção do meu trabalho aqui - Interaja com os projetos para ver meu
+        habilidades em ação</span
+      >
+    </div>
+   
+    <div class="mainBox">
+      @for(img of imgs; let i = $index; track i;){
+      <div class="project" [ngClass]="{'switchBoxes': i % 2 !== 0}" >
+        <div>
+          <span class="profileCount" [ngClass]="{'switchCount': i % 2 !== 0}" >0{{[i + 1]}}/0{{[imgs.length]}}</span>
+          <div class="hoverContainer" [ngClass]="{'hoverContainerSwitch': i % 2 !== 0}"> </div>
+           <img class="imgs" src="assets/img/{{ img }}" alt="" />
+           <div class="hoverContainerImg" [ngClass]="{'hoverContainerImgSwitch': i % 2 !== 0}"><img src="assets/img/arrow_side.png" alt=""></div>
+  
+        </div>
+       
+       
+        <div class="leftBox" [ngClass]="{'switchLeftBox': i % 2 !== 0}" >
+          <span class="portfolioTitle">{{title[i]}}</span>
+          <div class="infoBox"><span>{{usedTech[i]}}</span></div>
+          <span class="infoText">{{ description[i] }}</span>
+          <div class="buttonBox">
+            <a href="">Live</a>
+            <a href="">GitHub</a>
+            
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>

@@ -1,0 +1,249 @@
+@mixin hoverContainerStyles() {
+    transition: all 0.5s ease-in-out;
+    border: 3px solid;
+    height: 393px;
+    width: 590px;
+    position: absolute;
+    opacity: 1;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  @mixin hoverContainerImgStyles() {
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    position: relative;
+    top: -196px;
+    left: 588px;
+    transform: rotate(1deg);
+    opacity: 1;
+  }
+  
+  @mixin counterStyles() {
+    position: absolute;
+    right: 78px;
+    font-family: "Syne";
+    font-size: 48px;
+    font-weight: 700;
+  }
+  
+  @mixin boxStyles($leftValue) {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    position: relative;
+    left: $leftValue;
+    flex-basis: 50%;
+    margin-top: 112px;
+    gap: 16px;
+  
+    > div {
+      display: flex;
+      justify-content: flex-start;
+      gap: 22px;
+      > span {
+        text-align: start;
+      }
+      > a {
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .mainBoxContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(255, 252, 243);
+  }
+  .header {
+    text-align: center;
+    font-family: "Syne";
+    font-weight: 800;
+    font-size: 78px;
+  }
+  .headerdescription {
+    font-family: "Overpass";
+    font-weight: 400;
+    font-size: 23px;
+  }
+  .mainBoxHeader {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 112px;
+  }
+  .mainBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    .imgs {
+      width: auto;
+      height: 393px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 18px;
+    }
+  }
+  .project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 63vw;
+    gap: 72px;
+    align-items: flex-start;
+    &:hover {
+      .leftBox {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.1);
+        animation: slideLeft 0.5s ease-in-out;
+      }
+      .hoverContainer {
+        @include hoverContainerStyles();
+      }
+      .hoverContainerImg {
+        position: absolute;
+        > img {
+          @include hoverContainerImgStyles();
+        }
+      }
+    }
+  }
+  .profileCount {
+    @include counterStyles();
+  }
+  
+  .switchCount {
+    position: absolute;
+    left: 78px;
+    font-family: "Syne";
+    font-size: 48px;
+    font-weight: 700;
+  }
+  
+  .leftBox {
+    @include boxStyles($leftValue: 100px);
+  }
+  .switchLeftBox {
+    @include boxStyles($leftValue: -100px);
+  }
+  .hoverContainer {
+    border: 3px solid;
+    margin-top: 15px;
+    margin-left: 15px;
+    position: absolute;
+    opacity: 0;
+  }
+  .hoverContainerImg {
+    > img {
+      display: flex;
+      position: absolute;
+      top: -196px;
+      right: 0px;
+      left: 28px;
+      transform: rotate(135deg);
+      opacity: 0.2;
+    }
+  }
+  .portfolioTitle {
+    font-size: 48px;
+    font-family: "Syne";
+    font-weight: 800;
+  }
+  .infoBox {
+    font-family: "Overpass";
+    font-size: 24px;
+    color: rgb(0, 188, 143);
+  }
+  .infoText {
+    font-size: 16px;
+    font-family: "Overpass";
+  }
+  .buttonBox{
+    >a{
+      text-decoration: none;
+      color: black;
+      border: 4px solid;
+      padding: 12px 36px;
+      font-family: 'Overpass';
+      font-size: 23px;
+      font-weight: 400;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        font-weight: 600;
+        padding: 12px 48px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+  .switchBoxes {
+    flex-direction: row-reverse;
+  
+    &:hover {
+      .switchLeftBox {
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.1);
+        animation: slideRight 0.5s ease-in-out;
+      }
+      .hoverContainerSwitch {
+        transition: all 0.5s ease-in-out;
+        border: 3px solid;
+        height: 393px;
+        width: 590px;
+        position: absolute;
+        opacity: 1;
+        margin-top: 30px;
+        margin-left: 0px;
+      }
+      .hoverContainerImgSwitch {
+        position: absolute;
+        > img {
+          transition: all 0.5s ease-in-out;
+          display: flex;
+          position: relative;
+          top: -196px;
+          right: 0px;
+          left: -40px;
+          transform: rotate(270deg);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .hoverContainerSwitch {
+    border: 3px solid;
+    margin-top: 15px;
+    margin-left: 15px;
+    position: absolute;
+    opacity: 0;
+  }
+  .hoverContainerImgSwitch {
+    > img {
+      display: flex;
+      position: absolute;
+      top: -196px;
+      right: 0px;
+      left: 400px;
+      transform: rotate(182deg);
+      opacity: 0.2;
+    }
+  }
+  
+  @keyframes slideLeft {
+    to {
+      transform: translateX(0%);
+    }
+    from {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes slideRight {
+    to {
+      transform: translateX(0%);
+    }
+    from {
+      transform: translateX(100%);
+    }
+  }

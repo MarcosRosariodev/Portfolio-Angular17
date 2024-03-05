@@ -1,0 +1,64 @@
+.startScreen{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 252, 243);
+    margin-top: -88px;
+    transition: all 0.5s ease-in-out;
+    }
+    div{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: all 0.5s ease-in-out;
+        >span{ 
+            font-size: 100px;
+            font-family:'Roboto';
+            font-weight: 700;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    
+    .sektionName{
+        justify-content: center;
+        flex-direction: row;
+        padding-bottom: 142px;   
+    }
+    .name{
+        font-size: 48px!important;
+        font-family:'Overpass'!important;
+        color: rgba(0, 188, 143, 1);
+        font-weight: 700;
+    }
+    .sektionBottom{
+        bottom: 8%;
+        position: absolute;
+        width: 100%;
+        flex-direction: unset;
+        justify-content: space-between;
+        align-items: normal;
+        >a{
+            margin-left: 4rem;
+            text-decoration: none;
+            font-family: 'Overpass';
+            font-size: 23px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 1);
+            rotate: -90deg;
+            &:hover {
+                font-size: 24px;
+            }
+            
+        }
+        
+    }
+    .scrollContainer{
+        margin-right: 4rem;
+    
+        .test{
+            font-size:23px;
+            font-family: 'Overpass';
+            font-weight: 300;
+        }
+    }
